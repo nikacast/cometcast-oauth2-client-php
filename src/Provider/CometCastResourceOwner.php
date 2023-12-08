@@ -14,14 +14,10 @@ class CometCastResourceOwner implements ResourceOwnerInterface
      *
      * @var array
      */
-    protected array $response;
+    protected $response;
 
-    /**
-     * Creates new resource owner.
-     *
-     * @param array  $response
-     */
-    public function __construct(array $response = array())
+
+    public function __construct(array $response = [])
     {
         $this->response = $response;
     }
