@@ -34,7 +34,7 @@ class CometCastTest extends TestCase
     public function test_getBaseAccessTokenUrl()
     {
         $this->assertEquals(
-            "https://openapi.cometcast.live/oauth/token",
+            "https://openapi-oauth.cometcast.live/oauth/token",
             $this->provider->getBaseAccessTokenUrl([])
         );
     }

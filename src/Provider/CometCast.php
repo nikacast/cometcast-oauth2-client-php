@@ -11,6 +11,7 @@ class CometCast extends AbstractProvider
 {
     protected $baseUrl = "https://cometcast.live";
 
+    protected $openApiAuthBaseUrl = "https://openapi-oauth.cometcast.live";
     protected $openApiBaseUrl = "https://openapi.cometcast.live";
 
 
@@ -22,7 +23,7 @@ class CometCast extends AbstractProvider
 
     public function getBaseAccessTokenUrl(array $params)
     {
-        return "{$this->openApiBaseUrl}/oauth/token";
+        return "{$this->openApiAuthBaseUrl}/oauth/token";
     }
 
     public function getResourceOwnerDetailsUrl(AccessToken $token)
