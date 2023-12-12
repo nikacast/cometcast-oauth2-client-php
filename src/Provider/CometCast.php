@@ -14,6 +14,8 @@ class CometCast extends AbstractProvider
     protected $openApiAuthBaseUrl = "https://openapi-oauth.cometcast.live";
     protected $openApiBaseUrl = "https://openapi.cometcast.live";
 
+    protected $pkceMethod = null;
+
 
     public function getBaseAuthorizationUrl(): string
     {
@@ -51,6 +53,16 @@ class CometCast extends AbstractProvider
                 $response
             );
         }
+    }
+
+    protected function getPkceMethod()
+    {
+        return $this->pkceMethod ?: parent::getPkceMethod();
+    }
+
+    protected function getScopeSeparator()
+    {
+        return " ";
     }
 
     protected function createResourceOwner(array $response, AccessToken $token)
